@@ -34,11 +34,12 @@
     </bean>
     <!--配置视图解析器 Controller  hello(){return "index"}  转发：/WEB-INF/jsp/index.jsp -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="prefix" value="/WEB-INF/course/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
     <!--静态资源放行，凡是页面上访问css js images这些静态文件时候，都不经过controller-->
     <!--url路径如下：http://localhost:81/manager/css/hello.css-->
     <!--静态资源放行：http://localhost:81/manager/css/hello.css本来是要经过contrller,但是配置了这句话，配置完了以后，直接去寻找webapp/css/hello.css-->
     <mvc:resources mapping="/static/**" location="/static/"/>
+
 </beans>
